@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshops | Empowered Schools</title>
+  <meta name="description" content="Practical workshops for WA schools across AI integration, leadership development, pedagogy, inclusion, and wellbeing, designed by James Lorimer with 15 years of school leadership experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ---- What to expect ---- */
+    .expect-section {
+      background: var(--white);
+      padding: var(--section-py) 0;
+    }
+    .expect-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 3rem;
+      border-top: 1px solid var(--stone-dark);
+    }
+    .expect-item {
+      padding: 2rem 2rem 2rem 0;
+      border-right: 1px solid var(--stone-dark);
+    }
+    .expect-item:last-child { border-right: none; }
+    .expect-item:not(:first-child) { padding-left: 2rem; }
+    .expect-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .expect-item h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.55rem;
+    }
+    .expect-item p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ---- Sessions deep dive ---- */
+    .sessions-deep {
+      background: var(--off-white);
+      padding: var(--section-py) 0;
+    }
+    .session-deep-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--stone);
+      transition: box-shadow 0.18s;
+    }
+    .session-deep-card:hover { box-shadow: var(--shadow-md); }
+    .session-deep-header {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      align-items: center;
+      padding: 2rem;
+      cursor: pointer;
+      gap: 1.5rem;
+    }
+    .session-deep-num {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: var(--teal);
+      opacity: 0.25;
+      line-height: 1;
+    }
+    .session-deep-meta { flex: 1; }
+    .session-deep-tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-pale);
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    .session-deep-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+    .session-deep-body {
+      padding: 0 2rem 2rem 2rem;
+      border-top: 1px solid var(--stone);
+      padding-top: 1.75rem;
+    }
+    .session-deep-body p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      max-width: 640px;
+    }
+    .session-deep-body p:last-child { margin-bottom: 0; }
+    .session-outcomes {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .session-outcome-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .session-outcome-item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+    }
+
+    /* ---- Testimonial strip ---- */
+    .testimonial-strip {
+      background: var(--teal);
+      padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+    }
+    .testimonial-strip-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .t-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    }
+    .t-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .t-content { text-align: left; }
+    .t-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+      font-weight: 400;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 1.5rem;
+    }
+    .t-stat-row {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .t-stat {
+      text-align: left;
+    }
+    .t-stat-n {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: white;
+      line-height: 1;
+    }
+    .t-stat-l {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.3rem;
+    }
+
+    /* ---- Who it's for ---- */
+    .who-section {
+      background: var(--stone);
+      padding: var(--section-py) 0;
+    }
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .who-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+    .who-card h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+    .who-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .expect-grid { grid-template-columns: 1fr; }
+      .expect-item { border-right: none; border-bottom: 1px solid var(--stone-dark); padding: 1.75rem 0; }
+      .expect-item:last-child { border-bottom: none; }
+      .expect-item:not(:first-child) { padding-left: 0; }
+      .who-grid { grid-template-columns: 1fr; }
+      .session-deep-header { grid-template-columns: 60px 1fr; }
+      .session-deep-num { font-size: 2.5rem; }
+      .testimonial-strip-inner { grid-template-columns: 1fr; }
+      .t-photo { max-width: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="uploads/190051703.jpg" alt="Empowered Schools"></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="workshops.html" class="current">Workshops</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+    <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="workshops.html" class="current">Workshops</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow">Workshops</span>
+    <h1 class="page-hero-title">Workshops that actually change practice.</h1>
+    <p class="page-hero-sub">Workshops across AI integration, leadership development, pedagogy, inclusion, and wellbeing, designed and delivered by someone with 15 years of teaching and school leadership experience. Below is the flagship AI in Schools program in detail.</p>
+  </div>
+</div>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect-section">
+  <div class="container">
+    <span class="s-eyebrow">What to expect</span>
+    <h2 class="s-title">How the program works.</h2>
+    <div class="expect-grid">
+      <div class="expect-item">
+        <span class="expect-label">Format</span>
+        <h3>Delivered in your school</h3>
+        <p>Sessions are delivered on-site at your school, not at a conference centre or off-site facility. Context matters, and your school's context is the one we work in.</p>
+      </div>
+      <div class="expect-item">
+        <span class="expect-label">Structure</span>
+        <h3>Across one school term</h3>
+        <p>Four sessions spread across a term gives staff time to try things, come back with questions, and build genuine habits. One-offs don't stick. This does.</p>
+      </div>
+      <div class="expect-item">
+        <span class="expect-label">Audience</span>
+        <h3>For your whole school community</h3>
+        <p>Sessions are tailored to different audiences: leadership teams, teaching staff, and admin. The program builds capability at every level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSIONS DEEP DIVE -->
+<section class="sessions-deep">
+  <div class="container">
+    <span class="s-eyebrow">The four sessions</span>
+    <h2 class="s-title">What happens in each session.</h2>
+    <p class="s-intro">Each session builds on the last. By the end of the term, your school has moved from awareness to embedded capability.</p>
+
+    <div style="margin-top:2.5rem">
+
+      <div class="session-deep-card">
+        <div class="session-deep-header">
+          <div class="session-deep-num">01</div>
+          <div class="session-deep-meta">
+            <span class="session-deep-tag">Leadership team</span>
+            <div class="session-deep-title">Awareness: Getting calibrated</div>
+          </div>
+        </div>
+        <div class="session-deep-body">
+          <p>Your leadership team gets an honest, grounded picture of where AI actually is, where it's heading, and what it means for your school. This isn't hype or fear. It's a calibrated understanding of what's real right now.</p>
+          <p>We build shared language across the team so that everyone is working from the same understanding. Then we start to think about what informed policy looks like for your context.</p>
+          <div class="session-outcomes">
+            <div class="session-outcome-item">Shared language and understanding across the leadership team</div>
+            <div class="session-outcome-item">Honest picture of AI capabilities and limitations in a school context</div>
+            <div class="session-outcome-item">Foundation for an informed, practical AI policy</div>
+            <div class="session-outcome-item">Clear sense of what your next priorities should be</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-deep-card">
+        <div class="session-deep-header">
+          <div class="session-deep-num">02</div>
+          <div class="session-deep-meta">
+            <span class="session-deep-tag">All teaching staff</span>
+            <div class="session-deep-title">Quick Wins: Monday-ready workflows</div>
+          </div>
+        </div>
+        <div class="session-deep-body">
+          <p>This session is about immediate, tangible value. We go through practical AI workflows for planning, feedback, assessment design, parent communication, . These are the tasks that eat teacher time every week.</p>
+          <p>Staff don't just hear about these workflows. They try them in the session itself. By the time they leave, they've already saved time. That's what makes this stick.</p>
+          <div class="session-outcomes">
+            <div class="session-outcome-item">Time saved within the session, not just promised for later</div>
+            <div class="session-outcome-item">At least 3–5 practical workflows each teacher can use from Monday</div>
+            <div class="session-outcome-item">Reduced cognitive load on planning, feedback and communication</div>
+            <div class="session-outcome-item">Staff who want to keep using AI, not staff who feel forced to</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-deep-card">
+        <div class="session-deep-header">
+          <div class="session-deep-num">03</div>
+          <div class="session-deep-meta">
+            <span class="session-deep-tag">Teaching staff</span>
+            <div class="session-deep-title">Differentiation: AI for every learner</div>
+          </div>
+        </div>
+        <div class="session-deep-body">
+          <p>This session goes deeper into how AI can genuinely support students who need it most. Students with learning differences, EAL/D students, and students from disadvantaged backgrounds don't benefit automatically from AI adoption. This session makes sure they do.</p>
+          <p>We look at how AI works within a range of pedagogical practices, not as a replacement for good teaching, but as a tool that extends what great teachers can do. Differentiation, scaffolding, UDL principles.</p>
+          <div class="session-outcomes">
+            <div class="session-outcome-item">Concrete AI strategies for differentiated learning</div>
+            <div class="session-outcome-item">Tools that support EAL/D and learning diversity</div>
+            <div class="session-outcome-item">AI implementation aligned with UDL and inclusive practice</div>
+            <div class="session-outcome-item">Confidence to use AI to lift equity, not just efficiency</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-deep-card">
+        <div class="session-deep-header">
+          <div class="session-deep-num">04</div>
+          <div class="session-deep-meta">
+            <span class="session-deep-tag">Leadership &amp; admin</span>
+            <div class="session-deep-title">Admin &amp; Ops: School-wide insight</div>
+          </div>
+        </div>
+        <div class="session-deep-body">
+          <p>The final session zooms out to the whole-school level, looking at how AI can support administrative processes, operations, and the kind of deep understanding of your student community that good school leaders want but rarely have time for.</p>
+          <p>We focus on insights that are genuinely actionable: not just data dashboards that look impressive, but information that changes what your leadership team does on Monday morning.</p>
+          <div class="session-outcomes">
+            <div class="session-outcome-item">AI tools for administrative efficiency across the school</div>
+            <div class="session-outcome-item">Better insight into student patterns and needs at scale</div>
+            <div class="session-outcome-item">Leadership team confident to direct AI use across the school</div>
+            <div class="session-outcome-item">Clear plan for sustaining capability after the program ends</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL STRIP -->
+<div class="testimonial-strip">
+  <div class="testimonial-strip-inner">
+    <div class="t-photo">
+      <img src="uploads/Gemini_Generated_Image_pxo77hpxo77hpxo7.png" alt="James Lorimer presenting an AI in Education workshop">
+    </div>
+    <div class="t-content">
+      <p class="t-quote">"Engaging and knowledgeable within this rapidly growing area. Your guidance was extremely valuable. The feedback we received from all those who attended was glowing."</p>
+      <p style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4)">Network Principal, Western Australia</p>
+      <div class="t-stat-row">
+        <div class="t-stat">
+          <div class="t-stat-n">100%</div>
+          <div class="t-stat-l">rated knowledge 4 or 5/5</div>
+        </div>
+        <div class="t-stat">
+          <div class="t-stat-n">4.8/5</div>
+          <div class="t-stat-l">avg content usefulness</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="who-section">
+  <div class="container">
+    <span class="s-eyebrow">Who it's for</span>
+    <h2 class="s-title">Is this the right fit for your school?</h2>
+    <p class="s-intro">The program is designed for WA schools at any stage of AI readiness. You don't need to be ahead of the curve. You just need to be ready to start.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <h3>Schools just starting out</h3>
+        <p>If your leadership team is still figuring out where to begin, Session 1 (Awareness) is designed exactly for this. You'll leave with a clear picture and a practical path forward.</p>
+      </div>
+      <div class="who-card">
+        <h3>Schools already using AI</h3>
+        <p>If some staff are already using AI tools but there's no coherence or policy, the program brings everyone to the same level and builds a school-wide approach.</p>
+      </div>
+      <div class="who-card">
+        <h3>Primary and secondary schools</h3>
+        <p>James works with both primary and secondary schools. Every session is adapted . The challenges are different in each, and the delivery reflects that.</p>
+      </div>
+      <div class="who-card">
+        <h3>Schools that want lasting capability</h3>
+        <p>If you're tired of one-off PD that doesn't stick, this program is built specifically to leave your staff with capability they own, not dependency on any vendor or consultant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="container-narrow">
+    <span class="s-eyebrow" style="display:flex;justify-content:center">Book a workshop</span>
+    <h2 class="s-title" style="text-align:center;max-width:none">Let's talk about your school's context.</h2>
+    <p>Sessions are scheduled to suit the school term. Get in touch to start the conversation.</p>
+    <a href="mailto:james@empoweredschool.com.au" class="btn btn-primary btn-lg">james@empoweredschool.com.au</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Empowered Schools.</div>
+      <p class="footer-desc">Practical consulting for WA schools: AI, leadership, pedagogy, inclusion, and wellbeing.</p>
+    </div>
+    <div>
+      <span class="footer-col-label">Pages</span>
+      <nav class="footer-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About James</a>
+        <a href="services.html">Services</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div>
+      <span class="footer-col-label">Contact</span>
+      <div class="footer-contact-items">
+        <span>James Lorimer</span>
+        <a href="mailto:james@empoweredschool.com.au">james@empoweredschool.com.au</a>
+        <a href="http://www.empoweredschool.com.au">www.empoweredschool.com.au</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Empowered Schools. All rights reserved.</span>
+    <span>Western Australia</span>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('is-scrolled', window.scrollY > 10);
+  });
+  function toggleMobileNav() {
+    document.getElementById('nav-mobile').classList.toggle('is-open');
+  }
+</script>
+</body>
+</html>

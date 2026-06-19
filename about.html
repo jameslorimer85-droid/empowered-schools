@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About James | Empowered Schools</title>
+  <meta name="description" content="James Lorimer is a WA education consultant with over 15 years of school leadership experience, working across AI integration, leadership development, pedagogy, inclusion, and wellbeing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ---- Portrait ---- */
+    .about-portrait-section {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+    .portrait-block {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+    }
+    .portrait-circle {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--teal-pale);
+    }
+    .portrait-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 18%;
+    }
+    .portrait-caption {
+      margin-top: 1.5rem;
+    }
+    .portrait-caption-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+    .portrait-caption-role {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ---- Bio text ---- */
+    .bio-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+      line-height: 1.15;
+    }
+    .bio-section h2:first-child { margin-top: 0; }
+    .bio-section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .bio-section p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ---- Credentials ---- */
+    .credentials-section {
+      background: var(--stone);
+      padding: var(--section-py) 0;
+    }
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .cred-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+    .cred-num {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 500;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .cred-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.35rem;
+    }
+    .cred-desc {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ---- Values ---- */
+    .values-section {
+      background: var(--teal);
+      color: white;
+      padding: var(--section-py) 0;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      border-left: 1px solid rgba(255,255,255,0.12);
+    }
+    .value-item {
+      padding: 2rem;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .value-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: white;
+      margin-bottom: 0.6rem;
+    }
+    .value-desc {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .about-layout { grid-template-columns: 1fr; }
+      .portrait-block { position: static; display: flex; flex-direction: column; align-items: center; text-align: center; }
+      .portrait-circle { max-width: 260px; }
+      .credentials-grid { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .credentials-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="uploads/190051703.jpg" alt="Empowered Schools"></a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="current">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+    <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="about.html" class="current">About</a>
+    <a href="services.html">Services</a>
+    <a href="workshops.html">Workshops</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow">About</span>
+    <h1 class="page-hero-title">15 years in schools as teacher, leader, and now consultant.</h1>
+    <p class="page-hero-sub">My consulting is grounded in genuine firsthand experience of how schools work from the inside.</p>
+  </div>
+</div>
+
+<!-- BIO -->
+<section class="about-portrait-section">
+  <div class="container">
+    <div class="about-layout">
+      <div class="portrait-block">
+        <div class="portrait-circle">
+          <img src="uploads/James Lorimer.jpg" alt="James Lorimer">
+        </div>
+        <div class="portrait-caption">
+          <div class="portrait-caption-name">James Lorimer</div>
+          <div class="portrait-caption-role">Educational Consultant</div>
+          <div class="portrait-caption-role" style="margin-top:0.15rem">Western Australia</div>
+        </div>
+      </div>
+      <div class="bio-section">
+        <h2>Fifteen years inside schools.</h2>
+        <p>I've spent over 15 years working in schools, as a classroom teacher, curriculum leader, and Associate Principal. That means I've managed real timetables, navigated staff culture, worked with students across a full range of contexts, and led through the pressures every school leader knows well.</p>
+        <p>That experience shapes everything I bring to consulting. The approaches I share come from years of seeing what actually works in a school environment, not theory imported from outside education, but practice refined over time from inside it.</p>
+
+        <h2>Approaches developed through years of school practice.</h2>
+        <p>Over 15 years in schools, I've worked systematically across AI integration, leadership development, pedagogy, inclusion, and wellbeing, with leadership teams, classroom teachers, and administrative staff. <strong>Every approach I share has been shaped by that firsthand experience, developed through real school contexts.</strong></p>
+        <p>I've led workshops across WA school networks and worked with both primary and secondary schools. The feedback has been consistent: practical, grounded, immediately useful.</p>
+
+        <h2>Inclusion and equity isn't an add-on.</h2>
+        <p>I lead with inclusion because AI in schools that doesn't serve every learner isn't worth doing. That means building for students with learning differences, EAL/D students, and students from disadvantaged backgrounds from the very beginning, not as an afterthought.</p>
+        <p>This shapes every session I deliver and every tool I recommend. <strong>Equity isn't a value statement. It's a design requirement.</strong></p>
+
+        <h2>Why I started Empowered Schools.</h2>
+        <p>I kept seeing schools get sold generic PD that didn't match their context, or handed AI policies built on hype rather than reality. Leadership teams were confused and teachers were left without practical support.</p>
+        <p>Empowered Schools exists to fix that, with guidance that's honest, practical, and built by someone who understands what it actually takes to change practice in a school.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials-section">
+  <div class="container">
+    <span class="s-eyebrow">Experience &amp; credentials</span>
+    <h2 class="s-title">Grounded in real school experience.</h2>
+    <div class="credentials-grid">
+      <div class="cred-card">
+        <div class="cred-num">15+</div>
+        <div class="cred-label">Years working in schools</div>
+        <div class="cred-desc">As a classroom teacher, curriculum leader, and Associate Principal across WA secondary schools.</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">4.8</div>
+        <div class="cred-label">Average content usefulness rating</div>
+        <div class="cred-desc">Across multiple network workshops with WA school staff. 100% rated knowledge 4 or 5/5.</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">P–12</div>
+        <div class="cred-label">Primary and secondary experience</div>
+        <div class="cred-desc">Working with both primary and secondary schools across WA to build practical AI capability.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="container">
+    <span class="s-eyebrow s-eyebrow--light">What I stand for</span>
+    <h2 class="s-title" style="color:white;max-width:560px">The principles behind how I work.</h2>
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="value-title">Capability over dependency</div>
+        <div class="value-desc">I build capability that lasts after I leave, not reliance on me or any vendor. Your team owns it.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-title">Proven before recommended</div>
+        <div class="value-desc">Everything I share with your school has been tested in mine. No hype, no untested theory.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-title">Equity as a design requirement</div>
+        <div class="value-desc">AI implementation must serve every learner, not just those who are already advantaged.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-title">Honest about what works</div>
+        <div class="value-desc">AI is not a silver bullet. I'm direct about what it can and can't do in a school context.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="container-narrow">
+    <span class="s-eyebrow" style="display:flex;justify-content:center">Work with James</span>
+    <h2 class="s-title" style="text-align:center;max-width:none">Let's talk about your school.</h2>
+    <p>Investment is always discussed in an initial conversation and shaped to your school's context.</p>
+    <a href="mailto:james@empoweredschool.com.au" class="btn btn-primary btn-lg">james@empoweredschool.com.au</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Empowered Schools.</div>
+      <p class="footer-desc">Practical consulting for WA schools: AI, leadership, pedagogy, inclusion, and wellbeing.</p>
+    </div>
+    <div>
+      <span class="footer-col-label">Pages</span>
+      <nav class="footer-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About James</a>
+        <a href="services.html">Services</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div>
+      <span class="footer-col-label">Contact</span>
+      <div class="footer-contact-items">
+        <span>James Lorimer</span>
+        <a href="mailto:james@empoweredschool.com.au">james@empoweredschool.com.au</a>
+        <a href="http://www.empoweredschool.com.au">www.empoweredschool.com.au</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Empowered Schools. All rights reserved.</span>
+    <span>Western Australia</span>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('is-scrolled', window.scrollY > 10);
+  });
+  function toggleMobileNav() {
+    document.getElementById('nav-mobile').classList.toggle('is-open');
+  }
+</script>
+</body>
+</html>
