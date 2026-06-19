@@ -201,7 +201,7 @@
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.75);
       margin-bottom: 0.85rem;
       display: block;
     }
@@ -497,15 +497,8 @@
   </div>
 </footer>
 
+<script src="shared.js"></script>
 <script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('main-nav').classList.toggle('is-scrolled', window.scrollY > 10);
-  });
-
-  function toggleMobileNav() {
-    document.getElementById('nav-mobile').classList.toggle('is-open');
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     const form = document.getElementById('contact-form');

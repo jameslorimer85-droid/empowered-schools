@@ -659,10 +659,9 @@
   </div>
 </footer>
 
+<script src="shared.js"></script>
 <script>
   window.addEventListener('scroll', () => {
-    document.getElementById('main-nav').classList.toggle('is-scrolled', window.scrollY > 10);
-    // Highlight service nav
     const sections = ['ai','leadership','pedagogy','inclusion','wellbeing'];
     const links = document.querySelectorAll('.service-nav-link');
     let active = '';
@@ -674,9 +673,6 @@
       l.classList.toggle('active', l.getAttribute('href') === '#' + active);
     });
   });
-  function toggleMobileNav() {
-    document.getElementById('nav-mobile').classList.toggle('is-open');
-  }
 </script>
 </body>
 </html>
