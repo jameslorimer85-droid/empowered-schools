@@ -433,6 +433,14 @@ button { font-family: inherit; cursor: pointer; }
 
 
 /* --------------------------------------------------------------------------
+   Modifier utilities
+   -------------------------------------------------------------------------- */
+.s-title--white   { color: var(--white); }
+.s-title--center  { text-align: center; max-width: none; }
+.s-eyebrow--center { text-align: center; }
+.link-teal        { color: var(--teal); }
+
+/* --------------------------------------------------------------------------
    Focus states (keyboard navigation)
    -------------------------------------------------------------------------- */
 :focus-visible {

@@ -139,6 +139,7 @@
       border-radius: 10px;
       padding: 2rem;
       border: 1px solid var(--stone-dark);
+      background: var(--white);
     }
     .career-stage {
       font-size: 0.68rem;
@@ -225,6 +226,14 @@
       padding-top: 1.25rem;
       max-width: 700px;
     }
+
+    .further-section   { margin-top: 3.5rem; }
+    .further-heading   { font-size: 1.05rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1.5rem; }
+    .content-panel     { margin-top: 1.5rem; padding: 2rem; background: var(--white); border-radius: 10px; border: 1px solid var(--stone); }
+    .content-panel p   { font-size: 1rem; color: var(--text-muted); line-height: 1.75; max-width: 640px; }
+    .practice-item--white { background: var(--white); }
+    .investment-cta    { margin-top: 2.5rem; }
+    .investment-section .s-title { margin-bottom: 2rem; }
 
     /* ---- Practice areas (Pedagogy, Inclusion) ---- */
     .practice-grid {
@@ -337,7 +346,7 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="contact.html" class="nav-cta">Get in touch</a>
-    <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
+    <button class="nav-hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -412,8 +421,8 @@
       </div>
     </div>
 
-    <div style="margin-top:3.5rem">
-      <h3 style="font-size:1.05rem;font-weight:500;color:var(--charcoal);margin-bottom:1.5rem">Further AI offerings</h3>
+    <div class="further-section">
+      <h3 class="further-heading">Further AI offerings</h3>
       <div class="further-grid">
         <div class="further-card">
           <h3>Tool Building Cohort</h3>
@@ -444,17 +453,17 @@
     <p class="s-intro s-intro--wide">Wherever you are in your leadership career, the challenges are different. I've spent 15 years in schools, including senior leadership, and worked alongside leaders at every stage. Here's how I can support your growth.</p>
 
     <div class="career-grid">
-      <div class="career-card" style="background:var(--white)">
+      <div class="career-card">
         <span class="career-stage">Aspiring leaders</span>
         <h3>Stepping into leadership</h3>
         <p>For teachers ready to take their first leadership role: building the confidence, capability, and mindset to lead well from day one. Understanding what leadership actually looks like from the inside, before you're in it.</p>
       </div>
-      <div class="career-card" style="background:var(--white)">
+      <div class="career-card">
         <span class="career-stage">Middle leaders</span>
         <h3>Leading from the middle</h3>
         <p>For HODs, coordinators, SLCs, and year coordinators navigating the challenge of leading peers and managing up. Building team culture, coaching practice, curriculum leadership, and managing competing priorities without burning out.</p>
       </div>
-      <div class="career-card" style="background:var(--white)">
+      <div class="career-card">
         <span class="career-stage">Senior leaders</span>
         <h3>Leading the whole school</h3>
         <p>For associate principals and principals working on strategic vision, school culture, and organisational change. Support for the decisions that define a school, and the personal sustainability of the people making them.</p>
@@ -483,8 +492,8 @@
       <p class="alp-foot">Designed for small cohorts (6&ndash;10) so every participant gets genuine 1:1 support. Each participant finishes with an individual action plan and evidence aligned to AITSL standards. Delivered by an HBDI-certified practitioner and adapted to your school's context.</p>
     </div>
 
-    <div style="margin-top:1.5rem;padding:2rem;background:var(--white);border-radius:10px;border:1px solid var(--stone)">
-      <p style="font-size:1rem;color:var(--text-muted);line-height:1.75;max-width:640px">Beyond the Aspirant Leaders Program, leadership development is shaped entirely around the individual and their school context. The work emerges from a conversation about where you are and where you want to go.</p>
+    <div class="content-panel">
+      <p>Beyond the Aspirant Leaders Program, leadership development is shaped entirely around the individual and their school context. The work emerges from a conversation about where you are and where you want to go.</p>
     </div>
   </div>
 </section>
@@ -532,28 +541,28 @@
     <h2 class="s-title">Inclusion Support</h2>
     <p class="s-intro s-intro--wide">I lead every program with inclusion at the centre. Building schools that genuinely serve every learner is work I'm deeply committed to, not as compliance, but as a design principle.</p>
 
-    <div class="practice-grid" style="background:transparent">
-      <div class="practice-item" style="background:var(--white)">
+    <div class="practice-grid">
+      <div class="practice-item practice-item--white">
         <h3>Universal Design for Learning (UDL)</h3>
         <p>Embedding UDL principles into school practice: designing learning environments and tasks that work for every student from the start, not through retrofitted accommodations.</p>
       </div>
-      <div class="practice-item" style="background:var(--white)">
+      <div class="practice-item practice-item--white">
         <h3>Students with learning differences</h3>
         <p>Supporting schools to genuinely include students with learning difficulties, disabilities, and additional needs, moving beyond compliance paperwork to real educational practice that serves these students.</p>
       </div>
-      <div class="practice-item" style="background:var(--white)">
+      <div class="practice-item practice-item--white">
         <h3>EAL/D students</h3>
         <p>Building teacher and school capacity to support English as an Additional Language or Dialect students: language acquisition, access to curriculum, and genuine participation in school life.</p>
       </div>
-      <div class="practice-item" style="background:var(--white)">
+      <div class="practice-item practice-item--white">
         <h3>Students from disadvantaged backgrounds</h3>
         <p>Equity-centred practice that addresses the real barriers facing students from disadvantaged backgrounds, without deficit thinking, and with genuine belief in every student's capacity to succeed.</p>
       </div>
-      <div class="practice-item" style="background:var(--white)">
+      <div class="practice-item practice-item--white">
         <h3>Culturally responsive practice</h3>
         <p>Supporting schools to build culturally responsive approaches that honour students' backgrounds and identities, and create genuine belonging for students from all communities.</p>
       </div>
-      <div class="practice-item" style="background:var(--white)">
+      <div class="practice-item practice-item--white">
         <h3>Inclusive AI implementation</h3>
         <p>When AI is part of the conversation, inclusion isn't negotiable. Building AI approaches that serve the students who need the most support, not just those who are already advantaged.</p>
       </div>
@@ -607,11 +616,11 @@
 <section class="investment-section">
   <div class="investment-inner">
     <span class="s-eyebrow s-eyebrow--light">Investment</span>
-    <h2 class="s-title" style="color:white;margin-bottom:2rem">A note on pricing.</h2>
+    <h2 class="s-title s-title--white">A note on pricing.</h2>
     <p><strong>Investment is always discussed in an initial conversation</strong> and shaped to your school's size, context, and what you're trying to achieve. There's no fixed pricing page because one size doesn't fit all schools.</p>
     <p>I work with schools of all sizes, and I'm committed to making this accessible. If you're not sure whether it's within reach, get in touch and we'll figure out what makes sense.</p>
     <p>The first conversation is always free.</p>
-    <div style="margin-top:2.5rem">
+    <div class="investment-cta">
       <a href="contact.html" class="btn btn-ghost-white btn-lg">Start that conversation</a>
     </div>
   </div>
@@ -620,8 +629,8 @@
 <!-- CTA -->
 <div class="cta-band">
   <div class="container-narrow">
-    <span class="s-eyebrow" style="display:flex;justify-content:center">Get in touch</span>
-    <h2 class="s-title" style="text-align:center;max-width:none">Not sure which service fits?</h2>
+    <span class="s-eyebrow s-eyebrow--center">Get in touch</span>
+    <h2 class="s-title s-title--center">Not sure which service fits?</h2>
     <p>Tell me about your school and we'll work it out together. No obligation.</p>
     <a href="mailto:james@empoweredschools.com.au" class="btn btn-primary btn-lg">james@empoweredschools.com.au</a>
   </div>
