@@ -201,7 +201,7 @@
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.75);
       margin-bottom: 0.85rem;
       display: block;
     }
@@ -449,7 +449,7 @@
       <div class="expect-step">
         <div class="step-num">01</div>
         <h3>You get in touch</h3>
-        <p>Send a message via the form or email. Tell me a little about your school and where you're . There's no wrong answer.</p>
+        <p>Send a message via the form or email. Tell me a little about your school and where you're at with your journey. There's no wrong answer.</p>
       </div>
       <div class="expect-step">
         <div class="step-num">02</div>
@@ -459,7 +459,7 @@
       <div class="expect-step">
         <div class="step-num">03</div>
         <h3>We shape a program together</h3>
-        <p>Investment and delivery are worked out together based on your school's size and context. No fixed . It should fit your school, not the other way around.</p>
+        <p>Investment and delivery are worked out together based on your school's size and context. No fixed program. It should fit your school, not the other way around.</p>
       </div>
     </div>
   </div>
@@ -497,15 +497,8 @@
   </div>
 </footer>
 
+<script src="shared.js"></script>
 <script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('main-nav').classList.toggle('is-scrolled', window.scrollY > 10);
-  });
-
-  function toggleMobileNav() {
-    document.getElementById('nav-mobile').classList.toggle('is-open');
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     const form = document.getElementById('contact-form');
