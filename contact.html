@@ -144,6 +144,14 @@
       margin-top: 1rem;
       line-height: 1.5;
     }
+    .form-error {
+      display: none;
+      font-size: 0.85rem;
+      color: #b3261e;
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
 
     /* ---- Success message ---- */
     .form-success {
@@ -401,6 +409,7 @@
               <textarea id="message" name="message" placeholder="Your school's context, where you're starting from, specific questions…"></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-lg form-submit">Send message</button>
+            <p class="form-error" id="form-error"></p>
             <p class="form-note">Or email directly: <a href="mailto:james@empoweredschools.com.au" class="link-teal">james@empoweredschools.com.au</a></p>
           </form>
           <div class="form-success" id="form-success">
@@ -501,22 +510,49 @@
 
 <script src="shared.js"></script>
 <script>
-  function handleSubmit(e) {
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkolonel';
+
+  async function handleSubmit(e) {
     e.preventDefault();
     const form = document.getElementById('contact-form');
     const success = document.getElementById('form-success');
-    form.style.display = 'none';
-    success.style.display = 'block';
-    // In production: hook up to a form service (Formspree, Netlify Forms, etc.)
+    const errorEl = document.getElementById('form-error');
+    const btn = form.querySelector('.form-submit');
+    const originalLabel = btn.textContent;
+
+    errorEl.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
     const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
     const school = document.getElementById('school').value;
-    const message = document.getElementById('message').value;
-    const subject = encodeURIComponent('Enquiry from ' + name + ' - ' + school);
-    const body = encodeURIComponent('Name: ' + name + '\nSchool: ' + school + '\nEmail: ' + email + '\n\nMessage:\n' + message);
-    setTimeout(() => {
-      window.location.href = 'mailto:james@empoweredschools.com.au?subject=' + subject + '&body=' + body;
-    }, 800);
+    const data = new FormData(form);
+    data.append('_subject', 'Enquiry from ' + name + ' - ' + school);
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        const json = await res.json().catch(() => ({}));
+        const msg = (json.errors && json.errors.map(er => er.message).join(', '))
+          || 'Sorry, something went wrong. Please email james@empoweredschools.com.au directly.';
+        errorEl.textContent = msg;
+        errorEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      }
+    } catch (err) {
+      errorEl.textContent = 'Network error — please email james@empoweredschools.com.au directly.';
+      errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
   }
 </script>
 </body>
