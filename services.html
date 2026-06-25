@@ -105,6 +105,21 @@
       max-width: 580px;
     }
 
+    /* ---- AI feature photo band ---- */
+    .ai-feature {
+      margin-top: 3rem;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    }
+    .ai-feature img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
     /* ---- Further offerings grid ---- */
     .further-grid {
       display: grid;
@@ -330,6 +345,7 @@
     @media (max-width: 600px) {
       .session-row { grid-template-columns: 50px 1fr; gap: 1.25rem; }
       .session-row-num { font-size: 2rem; }
+      .ai-feature img { height: 260px; }
       .practice-grid { grid-template-columns: 1fr; }
       .wellbeing-grid { grid-template-columns: 1fr; }
     }
@@ -388,6 +404,10 @@
     <span class="session-tag">Flagship program</span>
     <h2 class="s-title">AI in Schools</h2>
     <p class="s-intro s-intro--wide">A structured program delivered across one school term. Not tool training, but capability building that lasts after I leave and stays relevant as the technology changes.</p>
+
+    <div class="ai-feature">
+      <img src="uploads/james-presenting-ai.png" alt="James Lorimer presenting an AI in Education workshop">
+    </div>
 
     <div class="sessions-detail">
       <div class="session-row">
