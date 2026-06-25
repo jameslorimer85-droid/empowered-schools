@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[depth mockup] Services | Empowered Schools</title>
+  <meta name="description" content="Empowered Schools services: AI in Schools, Leadership Development, Pedagogy, Inclusion Support, and Wellbeing. Consulting for WA schools by James Lorimer.">
+  <link rel="canonical" href="https://empoweredschools.com.au/services.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1C6278">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Empowered Schools">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:title" content="Services | Empowered Schools">
+  <meta property="og:description" content="Empowered Schools services: AI in Schools, Leadership Development, Pedagogy, Inclusion Support, and Wellbeing. Consulting for WA schools by James Lorimer.">
+  <meta property="og:url" content="https://empoweredschools.com.au/services.html">
+  <meta property="og:image" content="https://empoweredschools.com.au/uploads/190051703.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Services | Empowered Schools">
+  <meta name="twitter:description" content="Empowered Schools services: AI in Schools, Leadership Development, Pedagogy, Inclusion Support, and Wellbeing. Consulting for WA schools by James Lorimer.">
+  <meta name="twitter:image" content="https://empoweredschools.com.au/uploads/190051703.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="depth.css">
+  <style>
+    /* ---- Service nav strip ---- */
+    .service-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--stone);
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 90;
+    }
+    .service-nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .service-nav-link {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.9rem 1.1rem;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      display: block;
+      text-decoration: none;
+    }
+    .service-nav-link:hover { color: var(--teal); }
+    .service-nav-link.active { color: var(--teal); border-color: var(--teal); }
+
+    /* ---- Shared service section ---- */
+    .service-section {
+      padding: var(--section-py) 0;
+      scroll-margin-top: calc(var(--nav-h) + 48px);
+    }
+
+    /* ---- Session rows (AI section) ---- */
+    .sessions-detail { margin-top: 3.5rem; }
+    .session-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--stone);
+      align-items: start;
+    }
+    .session-row:first-child { border-top: 1px solid var(--stone); }
+    .session-row-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--teal);
+      opacity: 0.28;
+      line-height: 1;
+    }
+    .session-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-pale);
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+      margin-bottom: 0.5rem;
+    }
+    .session-row h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .session-row p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    /* ---- AI feature photo band ---- */
+    .ai-feature {
+      margin-top: 3rem;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    }
+    .ai-feature img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    /* ---- Further offerings grid ---- */
+    .further-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .further-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.75rem;
+      border: 1px solid var(--stone);
+    }
+    .further-card h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+    .further-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.72;
+    }
+
+    /* ---- Career stage cards (Leadership section) ---- */
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .career-card {
+      border-radius: 10px;
+      padding: 2rem;
+      border: 1px solid var(--stone-dark);
+      background: var(--white);
+    }
+    .career-stage {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .career-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .career-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.72;
+    }
+
+    /* ---- Aspirant Leaders Program panel ---- */
+    .alp-panel {
+      margin-top: 3.5rem;
+      background: var(--white);
+      border: 1px solid var(--stone-dark);
+      border-radius: 14px;
+      padding: 2.5rem;
+    }
+    .alp-head h3 {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin: 0.5rem 0 0.65rem;
+      line-height: 1.2;
+    }
+    .alp-head p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.72;
+      max-width: 620px;
+    }
+    .alp-halves {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .alp-half {
+      background: var(--off-white);
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+    }
+    .alp-half-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .alp-half h4 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .alp-half p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .alp-foot {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--stone);
+      padding-top: 1.25rem;
+      max-width: 700px;
+    }
+
+    .further-section   { margin-top: 3.5rem; }
+    .further-heading   { font-size: 1.05rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1.5rem; }
+    .content-panel     { margin-top: 1.5rem; padding: 2rem; background: var(--white); border-radius: 10px; border: 1px solid var(--stone); }
+    .content-panel p   { font-size: 1rem; color: var(--text-muted); line-height: 1.75; max-width: 640px; }
+    .practice-item--white { background: var(--white); }
+    .investment-cta    { margin-top: 2.5rem; }
+    .investment-section .s-title { margin-bottom: 2rem; }
+
+    /* ---- Practice areas (Pedagogy, Inclusion) ---- */
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      margin-top: 3rem;
+      border-top: 1px solid var(--stone-dark);
+      border-left: 1px solid var(--stone-dark);
+    }
+    .practice-item {
+      padding: 1.75rem;
+      border-right: 1px solid var(--stone-dark);
+      border-bottom: 1px solid var(--stone-dark);
+    }
+    .practice-item h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.45rem;
+    }
+    .practice-item p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* ---- Wellbeing pillars ---- */
+    .wellbeing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .wb-pillar {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.75rem;
+      border: 1px solid var(--stone);
+    }
+    .wb-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--teal);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .wb-pillar h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .wb-pillar p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+    }
+
+    /* ---- Investment ---- */
+    .investment-section {
+      background: var(--teal);
+      color: white;
+      padding: var(--section-py) 0;
+    }
+    .investment-inner {
+      max-width: var(--max-w-narrow);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+    .investment-inner p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 1rem;
+    }
+    .investment-inner strong { color: white; font-weight: 500; }
+
+    /* ---- Section intro override ---- */
+    .s-intro--wide { max-width: 680px; }
+
+    @media (max-width: 900px) {
+      .career-grid { grid-template-columns: 1fr; }
+      .further-grid { grid-template-columns: 1fr; }
+      .wellbeing-grid { grid-template-columns: repeat(2, 1fr); }
+      .alp-halves { grid-template-columns: 1fr; }
+      .alp-panel { padding: 1.75rem; }
+    }
+    @media (max-width: 600px) {
+      .session-row { grid-template-columns: 50px 1fr; gap: 1.25rem; }
+      .session-row-num { font-size: 2rem; }
+      .ai-feature img { height: 320px; }
+      .practice-grid { grid-template-columns: 1fr; }
+      .wellbeing-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="../uploads/190051703.jpg" alt="Empowered Schools"></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="current">Services</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="about.html">About</a>
+    <a href="services.html" class="current">Services</a>
+    <a href="workshops.html">Workshops</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow">Services &amp; Offerings</span>
+    <h1 class="page-hero-title">Five areas.<br>One trusted consultant.</h1>
+    <p class="page-hero-sub">AI integration, leadership development, pedagogy, inclusion support, and wellbeing, grounded in 15 years of teaching and school leadership across WA.</p>
+  </div>
+</div>
+
+<!-- SERVICE NAV STRIP -->
+<div class="service-nav">
+  <div class="service-nav-inner">
+    <a href="#ai" class="service-nav-link">AI in Schools</a>
+    <a href="#leadership" class="service-nav-link">Leadership Development</a>
+    <a href="#pedagogy" class="service-nav-link">Pedagogy</a>
+    <a href="#inclusion" class="service-nav-link">Inclusion Support</a>
+    <a href="#wellbeing" class="service-nav-link">Wellbeing</a>
+  </div>
+</div>
+
+<!-- ============ AI IN SCHOOLS ============ -->
+<section class="service-section bg-white" id="ai">
+  <div class="container">
+    <span class="s-eyebrow">Service 01</span>
+    <span class="session-tag">Flagship program</span>
+    <h2 class="s-title">AI in Schools</h2>
+    <p class="s-intro s-intro--wide">A structured program delivered across one school term. Not tool training, but capability building that lasts after I leave and stays relevant as the technology changes.</p>
+
+    <div class="ai-feature">
+      <img src="../uploads/james-presenting-ai.png" alt="James Lorimer presenting an AI in Education workshop">
+    </div>
+
+    <div class="sessions-detail">
+      <div class="session-row">
+        <div class="session-row-num">01</div>
+        <div>
+          <span class="session-tag">Leadership team</span>
+          <h3>Awareness</h3>
+          <p>Your leadership team gets calibrated on where AI actually is, where it's heading, and what it means for your school. This builds shared language and shared understanding: the foundation for informed policy and everything that follows.</p>
+        </div>
+      </div>
+      <div class="session-row">
+        <div class="session-row-num">02</div>
+        <div>
+          <span class="session-tag">All teaching staff</span>
+          <h3>Quick Wins</h3>
+          <p>Practical AI workflows your teachers can use on Monday morning: planning, feedback, assessment design, communication, admin. Staff walk away with time already saved within the session. This is what makes AI adoption stick.</p>
+        </div>
+      </div>
+      <div class="session-row">
+        <div class="session-row-num">03</div>
+        <div>
+          <span class="session-tag">Teaching staff</span>
+          <h3>Differentiation &amp; Inclusion</h3>
+          <p>Where AI genuinely supports every learner, including students with learning differences, EAL/D students, and those from disadvantaged backgrounds. Equity and engagement built into AI implementation from day one, not bolted on later.</p>
+        </div>
+      </div>
+      <div class="session-row">
+        <div class="session-row-num">04</div>
+        <div>
+          <span class="session-tag">Leadership &amp; admin</span>
+          <h3>Admin &amp; Operations</h3>
+          <p>Using AI to support administrative processes, operations, and deeper understanding of your student community. Insights that are genuinely actionable and support student outcomes at a whole-school level.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="further-section">
+      <h3 class="further-heading">Further AI offerings</h3>
+      <div class="further-grid">
+        <div class="further-card">
+          <h3>Tool Building Cohort</h3>
+          <p>Working with a staff cohort over a semester (four sessions) to build custom AI tools specific to your school's context. I hand over the capability for your team to keep developing after I leave. Not dependency, but ownership.</p>
+        </div>
+        <div class="further-card">
+          <h3>Appropriate Student Use of AI</h3>
+          <p>Working with teachers to build confidence and capacity to teach students how to use AI appropriately. Drawing on the latest research worldwide. One of the most important conversations schools can have right now.</p>
+        </div>
+        <div class="further-card">
+          <h3>AI Policy Review &amp; Development</h3>
+          <p>Working with your leadership team to develop or review your school's AI policy, grounded in practical reality, not just compliance. Policy your staff will actually understand and use.</p>
+        </div>
+        <div class="further-card">
+          <h3>WA Secondary AI Audit</h3>
+          <p>A free diagnostic across five dimensions of AI readiness that takes around 15 minutes. You'll know where your school sits and what to prioritise, whether you work with me or not. Ask about this when you get in touch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEADERSHIP DEVELOPMENT ============ -->
+<section class="service-section bg-off-white" id="leadership">
+  <div class="container">
+    <span class="s-eyebrow">Service 02</span>
+    <h2 class="s-title">Leadership Development</h2>
+    <p class="s-intro s-intro--wide">Wherever you are in your leadership career, the challenges are different. I've spent 15 years in schools, including senior leadership, and worked alongside leaders at every stage. Here's how I can support your growth.</p>
+
+    <div class="career-grid">
+      <div class="career-card">
+        <span class="career-stage">Aspiring leaders</span>
+        <h3>Stepping into leadership</h3>
+        <p>For teachers ready to take their first leadership role: building the confidence, capability, and mindset to lead well from day one. Understanding what leadership actually looks like from the inside, before you're in it.</p>
+      </div>
+      <div class="career-card">
+        <span class="career-stage">Middle leaders</span>
+        <h3>Leading from the middle</h3>
+        <p>For HODs, coordinators, SLCs, and year coordinators navigating the challenge of leading peers and managing up. Building team culture, coaching practice, curriculum leadership, and managing competing priorities without burning out.</p>
+      </div>
+      <div class="career-card">
+        <span class="career-stage">Senior leaders</span>
+        <h3>Leading the whole school</h3>
+        <p>For associate principals and principals working on strategic vision, school culture, and organisational change. Support for the decisions that define a school, and the personal sustainability of the people making them.</p>
+      </div>
+    </div>
+
+    <!-- Aspirant Leaders Program feature -->
+    <div class="alp-panel">
+      <div class="alp-head">
+        <h3>The Aspirant Leaders Program</h3>
+        <p>A structured, year-long program that prepares classroom teachers for their first middle leadership role. Built on a simple principle: know yourself before you lead others.</p>
+      </div>
+      <div class="alp-halves">
+        <div class="alp-half">
+          <span class="alp-half-label">Half one · Terms 1&ndash;2</span>
+          <h4>Know Yourself</h4>
+          <p>HBDI thinking-preference profiling with a confidential 1:1 debrief, then a full-day Leading Self workshop: values clarification, stress patterns, and self-awareness as the foundation of leadership.</p>
+        </div>
+        <div class="alp-half">
+          <span class="alp-half-label">Half two · Terms 3&ndash;4</span>
+          <h4>Lead Others</h4>
+          <p>360-degree feedback from colleagues with a 1:1 debrief, then a full-day Leading Others workshop: coaching conversations, building trust, clear communication, and leading through change.</p>
+        </div>
+      </div>
+      <p class="alp-foot">Designed for small cohorts (6&ndash;10) so every participant gets genuine 1:1 support. Each participant finishes with an individual action plan and evidence aligned to AITSL standards. Delivered by an HBDI-certified practitioner and adapted to your school's context.</p>
+    </div>
+
+    <div class="content-panel">
+      <p>Beyond the Aspirant Leaders Program, leadership development is shaped entirely around the individual and their school context. The work emerges from a conversation about where you are and where you want to go.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PEDAGOGY ============ -->
+<section class="service-section bg-white" id="pedagogy">
+  <div class="container">
+    <span class="s-eyebrow">Service 03</span>
+    <h2 class="s-title">Pedagogy</h2>
+    <p class="s-intro">Improving teaching practice is the most reliable way to improve student outcomes. I work with schools to embed high-impact, evidence-informed strategies into everyday practice, not just on PD days.</p>
+
+    <div class="practice-grid">
+      <div class="practice-item">
+        <h3>High-impact teaching strategies</h3>
+        <p>Evidence-informed practices that make a measurable difference to student learning: explicit teaching, formative assessment, targeted feedback, and more. Embedded in your school's context, not delivered as generic training.</p>
+      </div>
+      <div class="practice-item">
+        <h3>Assessment &amp; feedback design</h3>
+        <p>Assessment that actually informs teaching, not just data for data's sake. Working with teams to design tasks and feedback cycles that drive genuine improvement in student understanding and achievement.</p>
+      </div>
+      <div class="practice-item">
+        <h3>Curriculum planning</h3>
+        <p>Supporting teachers and curriculum teams to plan units and sequences that are coherent, appropriately differentiated, and aligned to school-wide priorities. Less reinventing the wheel, more shared expertise.</p>
+      </div>
+      <div class="practice-item">
+        <h3>Instructional coaching</h3>
+        <p>Working alongside teachers in their practice. Not just observing and evaluating, but coaching. Building reflective practitioners who improve continuously, not just during performance review cycles.</p>
+      </div>
+      <div class="practice-item">
+        <h3>Classroom environment &amp; culture</h3>
+        <p>The conditions for learning matter as much as the content. Supporting teachers to build inclusive, purposeful, well-managed classrooms where every student can engage and succeed.</p>
+      </div>
+      <div class="practice-item">
+        <h3>Evidence-informed PD design</h3>
+        <p>Building professional development programs for your school that actually change practice: structured, purposeful, and embedded in your real context and priorities. Not another one-off day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INCLUSION SUPPORT ============ -->
+<section class="service-section bg-stone" id="inclusion">
+  <div class="container">
+    <span class="s-eyebrow">Service 04</span>
+    <h2 class="s-title">Inclusion Support</h2>
+    <p class="s-intro s-intro--wide">I lead every program with inclusion at the centre. Building schools that genuinely serve every learner is work I'm deeply committed to, not as compliance, but as a design principle.</p>
+
+    <div class="practice-grid">
+      <div class="practice-item practice-item--white">
+        <h3>Universal Design for Learning (UDL)</h3>
+        <p>Embedding UDL principles into school practice: designing learning environments and tasks that work for every student from the start, not through retrofitted accommodations.</p>
+      </div>
+      <div class="practice-item practice-item--white">
+        <h3>Students with learning differences</h3>
+        <p>Supporting schools to genuinely include students with learning difficulties, disabilities, and additional needs, moving beyond compliance paperwork to real educational practice that serves these students.</p>
+      </div>
+      <div class="practice-item practice-item--white">
+        <h3>EAL/D students</h3>
+        <p>Building teacher and school capacity to support English as an Additional Language or Dialect students: language acquisition, access to curriculum, and genuine participation in school life.</p>
+      </div>
+      <div class="practice-item practice-item--white">
+        <h3>Students from disadvantaged backgrounds</h3>
+        <p>Equity-centred practice that addresses the real barriers facing students from disadvantaged backgrounds, without deficit thinking, and with genuine belief in every student's capacity to succeed.</p>
+      </div>
+      <div class="practice-item practice-item--white">
+        <h3>Culturally responsive practice</h3>
+        <p>Supporting schools to build culturally responsive approaches that honour students' backgrounds and identities, and create genuine belonging for students from all communities.</p>
+      </div>
+      <div class="practice-item practice-item--white">
+        <h3>Inclusive AI implementation</h3>
+        <p>When AI is part of the conversation, inclusion isn't negotiable. Building AI approaches that serve the students who need the most support, not just those who are already advantaged.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WELLBEING ============ -->
+<section class="service-section bg-white" id="wellbeing">
+  <div class="container">
+    <span class="s-eyebrow">Service 05</span>
+    <h2 class="s-title">Wellbeing</h2>
+    <p class="s-intro s-intro--wide">Staff wellbeing and student wellbeing are connected. When one suffers, so does the other. I help schools build sustainable approaches to wellbeing that work within real school constraints.</p>
+
+    <div class="wellbeing-grid">
+      <div class="wb-pillar">
+        <span class="wb-num">01</span>
+        <h3>Staff wellbeing frameworks</h3>
+        <p>Building school cultures where staff feel valued, supported, and sustainable in their roles. Moving beyond wellbeing days to structural approaches that reduce teacher burnout and build genuine collective efficacy.</p>
+      </div>
+      <div class="wb-pillar">
+        <span class="wb-num">02</span>
+        <h3>Student wellbeing programs</h3>
+        <p>Supporting schools to implement student wellbeing programs that are evidence-informed, culturally responsive, and integrated into the daily life of the school, not just tacked on as a separate initiative.</p>
+      </div>
+      <div class="wb-pillar">
+        <span class="wb-num">03</span>
+        <h3>Restorative practice</h3>
+        <p>Building school-wide approaches to behaviour and relationships that are restorative rather than punitive: repairing harm, rebuilding relationships, and creating safer and more connected school communities.</p>
+      </div>
+      <div class="wb-pillar">
+        <span class="wb-num">04</span>
+        <h3>Trauma-informed approaches</h3>
+        <p>Supporting teachers and school leaders to understand and respond to trauma in students, building classrooms and schools that feel safe for students whose home lives are difficult or unpredictable.</p>
+      </div>
+      <div class="wb-pillar">
+        <span class="wb-num">05</span>
+        <h3>Mental health literacy</h3>
+        <p>Building teacher confidence to recognise and respond to student mental health concerns. Not as clinicians, but as caring professionals who know how to connect students with the right support.</p>
+      </div>
+      <div class="wb-pillar">
+        <span class="wb-num">06</span>
+        <h3>Behaviour management</h3>
+        <p>School-wide approaches to behaviour that are consistent, fair, and effective for all students, moving beyond reactive responses to proactive systems that prevent issues before they escalate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="investment-section">
+  <div class="investment-inner">
+    <span class="s-eyebrow s-eyebrow--light">Investment</span>
+    <h2 class="s-title s-title--white">A note on pricing.</h2>
+    <p><strong>Investment is always discussed in an initial conversation</strong> and shaped to your school's size, context, and what you're trying to achieve. There's no fixed pricing page because one size doesn't fit all schools.</p>
+    <p>I work with schools of all sizes, and I'm committed to making this accessible. If you're not sure whether it's within reach, get in touch and we'll figure out what makes sense.</p>
+    <p>The first conversation is always free.</p>
+    <div class="investment-cta">
+      <a href="contact.html" class="btn btn-ghost-white btn-lg">Start that conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="container-narrow">
+    <span class="s-eyebrow s-eyebrow--center">Get in touch</span>
+    <h2 class="s-title s-title--center">Not sure which service fits?</h2>
+    <p>Tell me about your school and we'll work it out together. No obligation.</p>
+    <a href="mailto:james@empoweredschools.com.au" class="btn btn-primary btn-lg">james@empoweredschools.com.au</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Empowered Schools.</div>
+      <p class="footer-desc">Practical consulting for WA schools: AI, leadership, pedagogy, inclusion, and wellbeing.</p>
+    </div>
+    <div>
+      <span class="footer-col-label">Pages</span>
+      <nav class="footer-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About James</a>
+        <a href="services.html">Services</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div>
+      <span class="footer-col-label">Contact</span>
+      <div class="footer-contact-items">
+        <span>James Lorimer</span>
+        <a href="mailto:james@empoweredschools.com.au">james@empoweredschools.com.au</a>
+        <a href="http://www.empoweredschools.com.au">www.empoweredschools.com.au</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Empowered Schools. All rights reserved.</span>
+    <span>Western Australia</span>
+  </div>
+</footer>
+
+<script src="../shared.js"></script>
+<script src="depth.js"></script>
+<script>
+  window.addEventListener('scroll', () => {
+    const sections = ['ai','leadership','pedagogy','inclusion','wellbeing'];
+    const links = document.querySelectorAll('.service-nav-link');
+    let active = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) active = id;
+    });
+    links.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + active);
+    });
+  });
+</script>
+</body>
+</html>
