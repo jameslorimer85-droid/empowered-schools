@@ -5,6 +5,25 @@
    prefers-reduced-motion (see bottom + motion.js).
    ========================================================================== */
 
+/* ---- Preview load marker (proves this stylesheet is applied; remove later) ---- */
+body::before {
+  content: "MOTION PREVIEW";
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 10000;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background: var(--teal);
+  padding: 0.3rem 0.7rem;
+  border-radius: 100px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+
 /* ---- Scroll reveal ---- */
 [data-reveal] {
   opacity: 0;
@@ -62,13 +81,15 @@
 /* The photo band is scaled slightly so JS translate never reveals edges. */
 .ai-feature img { transform: scale(1.08); }
 
-/* ---- Reduced motion: show everything, no animation ---- */
+/* ---- Reduced motion: show everything, no animation ----
+   (scoped to :not(.force-motion) so the preview "Play motion" button can
+   re-enable the animations on demand) ---- */
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal],
-  .motion-hero-el {
+  body:not(.force-motion) [data-reveal],
+  body:not(.force-motion) .motion-hero-el {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
-  .ai-feature img { transform: none; }
+  body:not(.force-motion) .ai-feature img { transform: none; }
 }
