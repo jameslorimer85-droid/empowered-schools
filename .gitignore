@@ -11,3 +11,10 @@ desktop.ini
 uploads/empowerED Brandbook by Pomelli.pdf
 uploads/Aspirant_Leaders_Program_Proposal_v2.docx
 uploads/AI in Education - offering.pdf
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
