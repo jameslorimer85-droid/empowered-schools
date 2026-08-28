@@ -90,7 +90,6 @@ button { font-family: inherit; cursor: pointer; }
   height: 32px;
   width: auto;
   display: block;
-  mix-blend-mode: multiply;
 }
 
 .nav-links {
